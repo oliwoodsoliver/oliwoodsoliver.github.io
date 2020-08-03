@@ -11,17 +11,29 @@
 
     <a-scene embedded arjs='trackingMethod: best;, sourceType: webcam; debugUIEnabled: false;'>
       <a-marker preset="kanji">
-        <!-- <a-box position='0 1 0' material='color: blue;'></a-box> -->
-	<a-video src="#ds" position="0 0.5 0" rotation="270 0 0" play="true"></a-video>
+         <a-video vidhandler src="#ds" position="0 0.5 0" rotation="270 0 0" play="true"></a-video>
       </a-marker>
       <a-entity camera></a-entity>
     </a-scene>
 
     <script>
-      window.addEventListener('load', function () {
-      var v = document.querySelector('#ds');
-      v.play();
-      });
+      AFRAME.registerComponent('vidhandler', {
+          init: function () {
+            this.toggle = false;
+            document.querySelector("#vid").pause(); //reference to the video
+          },
+          tick:function(){  
+           if(document.querySelector("a-marker").object3D.visible == true){
+             if(!this.toggle){
+               this.toggle = true;
+               document.querySelector("#vid").play();
+             }
+           }else{
+             this.toggle = false;
+             document.querySelector("#vid").pause();
+           }
+          }
+        });
     </script>
 
   </body>
