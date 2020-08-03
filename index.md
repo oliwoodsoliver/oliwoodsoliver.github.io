@@ -18,7 +18,7 @@
     </a-scene>
 
     <script>
-      window.addEventListener('click', function () {
+      window.addEventListener('load', function () {
       var v = document.querySelector('#ds');
       v.play();
       });
