@@ -9,7 +9,7 @@
        <video id="ds" autoplay loop="true" muted="true" src="https://archive.org/download/electricsheep-flock-244-37500-9/00244%3D37509%3D33572%3D32771_512kb.mp4"></video>
     </a-assets>
 
-    <a-scene embedded arjs='trackingMethod: best;'>
+    <a-scene embedded arjs='trackingMethod: best;, sourceType: webcam; debugUIEnabled: false;'>
       <a-marker preset="kanji">
         <!-- <a-box position='0 1 0' material='color: blue;'></a-box> -->
 	<a-video src="#ds" position="0 0.5 0" rotation="270 0 0" play="true"></a-video>
