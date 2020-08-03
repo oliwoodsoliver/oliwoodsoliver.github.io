@@ -19,8 +19,12 @@
     <script>
       window.addEventListener('click', function () {
       var v = document.querySelector('#ds');
-      v.play();
-      });
+      if (v.paused == true) {
+          v.play();
+          } else {
+          v.pause();
+        }
+      }, false);
     </script>
 
   </body>
