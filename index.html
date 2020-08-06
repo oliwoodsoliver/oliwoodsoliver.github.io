@@ -8,14 +8,13 @@
 <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
 <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"> </script>
   <body style='margin : 0px; overflow: hidden;'>
-    
+    <a-assets>
+       <video id="ds" autoplay crossOrigin="anonymous" type="video/mp4" loop="true" muted="true" playsinline webkit-playsinline controls src="https://oliwoodsoliver.github.io/trailer.mp4"></video>
+    </a-assets>
 
     <a-scene embedded arjs='trackingMethod: best;, sourceType: webcam; debugUIEnabled: false;'>
-    <a-assets>
-       <video id="ds" autoplay crossOrigin="anonymous" type="video/mp4" loop="true" muted="true" playsinline webkit-playsinline controls src="https://archive.org/download/electricsheep-flock-244-37500-9/00244%3D37509%3D33572%3D32771_512kb.mp4"></video>
-    </a-assets>
       <a-marker preset="kanji" vidhandler="video: #ds">
-         <a-video vidhandler id="dsv" width="5%" height="5%" src="#ds" position="0 0.5 0" rotation="270 0 0" play="true"></a-video>
+         <a-video vidhandler width="5%" height="5%" src="#ds" position="0 0.5 0" rotation="270 0 0" play="true"></a-video>
       </a-marker>
       <a-entity camera></a-entity>
     </a-scene>
@@ -27,15 +26,6 @@
           v.play();
           } else {
           v.pause();
-        }
-      }, false);
-        
-      window.addEventListener('click', function () {
-      var vid = document.querySelector('#dsv');
-      if (vid.paused == true) {
-          vid.play();
-          } else {
-          vid.pause();
         }
       }, false);
     </script>
