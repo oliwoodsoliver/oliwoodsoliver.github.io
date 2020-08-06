@@ -5,7 +5,7 @@
 <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
 <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"> </script>
   <body style='margin : 0px; overflow: hidden;'>
-    <div id="bar" style="width:100%; height:20%; background-color:black z-index: 1000;"></div>
+    <div id="bar" style="width:100%; height:20%; background-color:black; z-index: 1000;"></div>
     <a-assets>
        <video id="ds" autoplay crossOrigin="anonymous" type="video/mp4" loop="true" muted="true" playsinline webkit-playsinline controls src="https://oliwoodsoliver.github.io/trailer.mp4"></video>
     </a-assets>
@@ -14,7 +14,7 @@
       <a-marker preset="kanji" vidhandler="video: #ds">
          <a-video vidhandler width="10%" height="10%" src="#ds" position="0 0.5 0" rotation="270 0 0" play="true"></a-video>
       </a-marker>
-      <a-entity camera position="0 0 -2.1"></a-entity>
+      <a-entity camera></a-entity>
     </a-scene>
 
     <script>
